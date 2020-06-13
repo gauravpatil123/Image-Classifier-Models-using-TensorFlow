@@ -34,6 +34,9 @@ history = model.fit(TRAIN_GENERATOR,
                     verbose = 1,
                     calbacks = [callbacks])
 
+# saving trained weights
+model.save("binaryCNN.h5")
+
 # plotting results
 acc = history.history['acc']
 val_acc = history.history['val_acc']
