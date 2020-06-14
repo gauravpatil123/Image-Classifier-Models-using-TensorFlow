@@ -1,2 +1,5 @@
 .DS_Store
 Binary-Classifier/data
+Binary-Classifier/binaryCNN.h5
+*.h5
+Binary-Classifier/*.h5
