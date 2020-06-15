@@ -2,7 +2,7 @@
 Image classification models on various datasets using TenserFlow and Keras
 
 **Models**
--**1. Binary-Classifier**
+**1. Binary-Classifier**
   -**Classes**
     - BinaryCNN
     - BinaryImageGenerators
