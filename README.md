@@ -2,10 +2,14 @@
 Image classification models on various datasets using TenserFlow and Keras
 
 **Models**
-**1. Binary-Classifier**
-  -**Classes**
+1. **Binary-Classifier:**
+  - **Classes**
     - BinaryCNN
-    - BinaryImageGenerators
+    - BinaryImageGenerator
     - DatasetDirectoryPreprocessing
     - PlotCode
-    - TrainBInaryCNN
+  - **Executables**
+    - TrainBinaryCNN
+  - **Results**
+    - Accuracy on Training and Validation set of the Binary Classifier
+    - <img src="Images/train v validation_accuracy.png" width=500>
