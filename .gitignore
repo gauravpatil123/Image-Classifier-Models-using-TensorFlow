@@ -3,3 +3,8 @@ Binary-Classifier/data
 Binary-Classifier/binaryCNN.h5
 *.h5
 Binary-Classifier/*.h5
+Multi-Classifier/data
+Multi-Classifier/multiCNN.h5
+Multi-Classifier/*.h5
+Binary-Classifier/__pycache__
+Multi-Classifier/__pycache__
