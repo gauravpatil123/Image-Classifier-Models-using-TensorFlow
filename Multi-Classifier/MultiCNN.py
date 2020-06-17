@@ -2,7 +2,7 @@ import tensorflow as tf
 
 model = tf.keras.models.Sequential([
         # First Convolution layer
-        tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu', input_shape = (150, 150, 3)),
+        tf.keras.layers.Conv2D(32, (3, 3), activation = 'relu', input_shape = (300, 300, 3)),
         tf.keras.layers.MaxPooling2D(2, 2),
         # Second Convolution layer
         tf.keras.layers.Conv2D(64, (3, 3), activation = 'relu'),
@@ -25,5 +25,5 @@ model = tf.keras.models.Sequential([
         # Second fully connected hidden layer
         tf.keras.layers.Dense(512, activation = 'relu'),
         # Output layers
-        tf.keras.layers.Dense("ENTER NUMBER OF OUTPUT NEURONS", activation = 'softmax')
-)]
+        tf.keras.layers.Dense(150, activation = 'softmax')
+])

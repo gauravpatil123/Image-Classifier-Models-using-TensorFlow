@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from keras_preprocessing import image
 
 # desired Training accuracy
-DESIRED_TRAINING_ACCURACY = 0.999
+DESIRED_TRAINING_ACC = 0.999
 
 # configuring callback
 class myCallback(tf.keras.callbacks.Callback):
@@ -32,20 +32,20 @@ VALIDATION_GENERATOR = MIG.validation_generator
 
 # compiling model
 model.compile(optimizer = 'adam',
-              loss = 'sparse_categorical_crossentropy',
+              loss = 'categorical_crossentropy',
               metrics = ['accuracy'])
 
 # training model
 history = model.fit(TRAIN_GENERATOR,
                     validation_data = VALIDATION_GENERATOR,
-                    steps_per_epoch = # calculate,
-                    epochs = 25,
-                    validation_steps = # calculate,
+                    steps_per_epoch = 577, # 577 x 7 = 4036
+                    epochs = 50, 
+                    validation_steps = 16, # 124 x 16 = 1984
                     verbose = 1,
                     callbacks = [callbacks])
 
 # saving trained weights
-model.save("multi.CNN.h5")
+model.save("multiCNN.h5")
 
 # plotting results
 acc = history.history['accuracy']
@@ -58,4 +58,26 @@ PC.plot(acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
 PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
 
 # testing model on test set
+TEST_DIR = DDP.test_dir
+CLASS_LIST = DDP.class_list
+
+for folder in CLASS_LIST:
+    # predictions
+    print("Predictions for images in " + folder + " class")
+    path = os.path.join(TEST_DIR, folder)
+    path_list = os.listdir(path)
+
+    for fn in path_list:
+        img_path = os.path.join(path, fn)
+        img = image.load_img(img_path, target_size = (150, 150))
+
+        xs = image.img_to_array(img)
+        xs = np.expand_dims(xs, axis = 0)
+
+        images = np.vstack([xs])
+        classes = model.predict(images, batch_size = 20)
+
+        for idx in range(len(classes)):
+            if classes[idx] > 0.7:
+                print("\n" + fn + " is a " + folder)
 

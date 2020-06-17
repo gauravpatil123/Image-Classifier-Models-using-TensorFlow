@@ -8,3 +8,6 @@ Multi-Classifier/multiCNN.h5
 Multi-Classifier/*.h5
 Binary-Classifier/__pycache__
 Multi-Classifier/__pycache__
+__pycache__
+__pycache__/
+
