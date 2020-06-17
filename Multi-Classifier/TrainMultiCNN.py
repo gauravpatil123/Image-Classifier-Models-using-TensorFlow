@@ -39,7 +39,7 @@ model.compile(optimizer = 'adam',
 history = model.fit(TRAIN_GENERATOR,
                     validation_data = VALIDATION_GENERATOR,
                     steps_per_epoch = 577, # 577 x 7 = 4036
-                    epochs = 50, 
+                    epochs = 200, 
                     validation_steps = 16, # 124 x 16 = 1984
                     verbose = 1,
                     callbacks = [callbacks])
