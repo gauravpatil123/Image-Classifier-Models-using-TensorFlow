@@ -14,7 +14,7 @@ Image classification models on various datasets using TenserFlow and Keras
     - DatasetDirectoryPreprocessing : Directories and processing of datasets
     - PlotCode : Plotting metrics from the trained model
   - **Executables**
-    - TrainBinaryCNN : Training the BinaryCNN model using data generators from BinaryImageGenerators on the cats_and_dogs dataset
+    - TrainBinaryCNN : Training the BinaryCNN model using data generators from BinaryImageGenerator on the cats_and_dogs dataset
   - **Results**
     - Accuracy on Training and Validation set of the Binary Classifier
     - <img src="Binary-Classifier/Images/train_v_validation_accuracy.png" width=1000>
@@ -22,8 +22,14 @@ Image classification models on various datasets using TenserFlow and Keras
    
 2. **Multi-Classifier:**
   - **Dataset**
+    - [PokemonData](https://www.kaggle.com/lantian773030/pokemonclassification)
   - **Classes**
+    - MultiCNN : model for the convolutional neural network multi classifier
+    - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
+    - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to traiing, validation and test sets
+    - PlotCode : Plotting metrics from the trained model
   - **Executable**
+    - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the PokemonData dataset
   - **Results**
   
 3. **Multi-Classifier-with-Transfer-Learning:**
