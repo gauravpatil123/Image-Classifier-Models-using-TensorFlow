@@ -38,9 +38,7 @@ model.compile(optimizer = 'adam',
 # training model
 history = model.fit(TRAIN_GENERATOR,
                     validation_data = VALIDATION_GENERATOR,
-                    steps_per_epoch = 577, # 577 x 7 = 4036
-                    epochs = 200, 
-                    validation_steps = 16, # 124 x 16 = 1984
+                    epochs = 100, 
                     verbose = 1,
                     callbacks = [callbacks])
 
@@ -54,12 +52,14 @@ loss = history.history['loss']
 val_loss = history.history['val_loss']
 epochs = range(len(acc))
 
-PC.plot(acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
+PC.plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
 PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
 
 # testing model on test set
+"""
 TEST_DIR = DDP.test_dir
 CLASS_LIST = DDP.class_list
+TEST_IMAGE_COUNT = 0
 
 for folder in CLASS_LIST:
     # predictions
@@ -69,15 +69,26 @@ for folder in CLASS_LIST:
 
     for fn in path_list:
         img_path = os.path.join(path, fn)
-        img = image.load_img(img_path, target_size = (150, 150))
+        try:
+            img = image.load_img(img_path, target_size = (300, 300))
 
-        xs = image.img_to_array(img)
-        xs = np.expand_dims(xs, axis = 0)
+            xs = image.img_to_array(img)
+            xs = np.expand_dims(xs, axis = 0)
 
-        images = np.vstack([xs])
-        classes = model.predict(images, batch_size = 20)
+            images = np.vstack([xs])
+            classes = model.predict(images, batch_size = 20)
+            # print(classes)
 
-        for idx in range(len(classes)):
-            if classes[idx] > 0.7:
-                print("\n" + fn + " is a " + folder)
+            TEST_IMAGE_COUNT += 1
+            CLASS_IMAGE_INDEX = 0
+            print("Test Image no.: ", TEST_IMAGE_COUNT)
+            for idx in range(150):
+                if classes[CLASS_IMAGE_INDEX][idx] > 0.6:
+                    print("\n" + fn + " is a " + CLASS_LIST[idx])
+        
+            CLASS_IMAGE_INDEX += 1
+        
+        except:
+            continue
+"""
 

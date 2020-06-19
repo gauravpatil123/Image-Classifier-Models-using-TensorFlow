@@ -25,5 +25,5 @@ model = tf.keras.models.Sequential([
         # Second fully connected hidden layer
         tf.keras.layers.Dense(512, activation = 'relu'),
         # Output layers
-        tf.keras.layers.Dense(150, activation = 'softmax')
+        tf.keras.layers.Dense(10, activation = 'softmax')
 ])

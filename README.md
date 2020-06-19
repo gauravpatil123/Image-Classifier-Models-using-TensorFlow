@@ -22,11 +22,11 @@ Image classification models on various datasets using TenserFlow and Keras
    
 2. **Multi-Classifier:**
   - **Dataset**
-    - [PokemonData](https://www.kaggle.com/lantian773030/pokemonclassification)
+    - [Monkey-Species](https://www.kaggle.com/slothkong/10-monkey-species?)
   - **Classes**
     - MultiCNN : model for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
-    - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to traiing, validation and test sets
+    - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to training, validation and test sets
     - PlotCode : Plotting metrics from the trained model
   - **Executable**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the PokemonData dataset
