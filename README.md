@@ -31,6 +31,9 @@ Image classification models on various datasets using TenserFlow and Keras
   - **Executable**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the PokemonData dataset
   - **Results**
+    - Accuracy on Training and Validation set of Multi Classifier
+    - <img src="Multi-Classifier/Images/train_v_validation_accuracy.png" width=1000>
+    - <img src="Multi-Classifier/Images/train_v_validation_loss.png" width=1000>
   
 3. **Multi-Classifier-with-Transfer-Learning:**
   - **Dataset**
