@@ -5,6 +5,7 @@ base_dir = "data/Monkey-Species/"
 
 train_dir = os.path.join(base_dir, "training/")
 validation_dir = os.path.join(base_dir, "validation/")
+test_dir = "data/testing/"
 
 class_dict = {"n0" : "mantled howler",
               "n1" : "patas monkey",
