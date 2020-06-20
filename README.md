@@ -23,13 +23,18 @@ Image classification models on various datasets using TenserFlow and Keras
 2. **Multi-Classifier:**
   - **Dataset**
     - [Monkey-Species](https://www.kaggle.com/slothkong/10-monkey-species?)
+      1. Training Set Size = 1098 (spread across all 10 classes)
+      2. Validation Set Size = 272 (spread across all 10 classes)
+    - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
+      1. Testing Set Size = 30 (3 images of each class)
   - **Classes**
     - MultiCNN : model for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to training, validation and test sets
     - PlotCode : Plotting metrics from the trained model
   - **Executable**
-    - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the PokemonData dataset
+    - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the Monkey-Species dataset
+    - TestMultiCNN : Testing the trained MultiCNN model on the Testing Dataset
   - **Results**
     - Accuracy on Training and Validation set of Multi Classifier
     - <img src="Multi-Classifier/Images/train_v_validation_accuracy.png" width=1000>
