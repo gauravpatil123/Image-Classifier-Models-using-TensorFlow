@@ -42,6 +42,11 @@ Image classification models on various datasets using TenserFlow and Keras
   
 3. **Multi-Classifier-with-Transfer-Learning:**
   - **Dataset**
+    - [PokemonData](https://www.kaggle.com/lantian773030/pokemonclassification)
+      1. Training Set Size = 4039
+      2. Validation Set Size = 1984
+      3. Testing Set size = 814
+      4. Number of classes = 150
   - **Classes**
   - **Executables**
   - **Results**
