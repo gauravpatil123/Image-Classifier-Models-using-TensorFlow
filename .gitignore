@@ -10,4 +10,8 @@ Binary-Classifier/__pycache__
 Multi-Classifier/__pycache__
 __pycache__
 __pycache__/
-
+Multi-Classifier-using-Transfer-Learning/*.h5
+Multi-Classifier-using-Transfer-Learning/data
+Multi-Classifier-using-Transfer-Learning/multiCNN.h5
+Multi-Classifier-using-Transfer-Learning/__pycache__
+Multi-Classifier-using-Transfer-Learning/pre-trained-model

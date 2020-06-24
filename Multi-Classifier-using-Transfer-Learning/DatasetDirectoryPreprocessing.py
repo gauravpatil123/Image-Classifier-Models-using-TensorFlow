@@ -17,7 +17,10 @@ os.mkdir(test_dir)
 
 class_list = os.listdir(base_dir)
 class_list = sorted(class_list)
-class_list.remove(".DS_Store")
+try:
+    class_list.remove(".DS_Store")
+except:
+    print("No .DS_Store file")
 num_classes = len(class_list)
 print("Number of classes: ", num_classes)
 # print(class_list)

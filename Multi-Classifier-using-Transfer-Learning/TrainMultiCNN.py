@@ -1,5 +1,5 @@
 import tensorflow as tf
-import MultiImageGenerators as MIG
+import ImageGenerators as IG
 import MultiCNN as CNN
 import PlotCode as PC
 import DatasetDirectoryPreprocessing as DDP
@@ -7,8 +7,9 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 from keras_preprocessing import image
+from tensorflow.keras.optimizers import RMSprop
 
-# desired Training accuracy
+# desired training accuracy
 DESIRED_TRAINING_ACC = 0.999
 
 # configuring callback
@@ -27,22 +28,22 @@ model = CNN.model
 model.summary()
 
 # Image Generators
-TRAIN_GENERATOR = MIG.train_generator
-VALIDATION_GENERATOR = MIG.validation_generator
+TRAIN_GENERATOR = IG.train_generator
+VALIDATION_GENERATOR = IG.validation_generator
 
 # compiling model
-model.compile(optimizer = 'adam',
+model.compile(optimizer=RMSprop(lr=0.0001),
               loss = 'categorical_crossentropy',
               metrics = ['accuracy'])
 
 # training model
 history = model.fit(TRAIN_GENERATOR,
                     validation_data = VALIDATION_GENERATOR,
-                    epochs = 100, 
+                    epochs = 100,
                     verbose = 1,
                     callbacks = [callbacks])
 
-# saving trained weights
+# saving model
 model.save("multiCNN.h5")
 
 # plotting results
