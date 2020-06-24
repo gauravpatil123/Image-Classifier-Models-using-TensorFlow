@@ -30,7 +30,7 @@ Image classification models on various datasets using TenserFlow and Keras
   - **Classes**
     - MultiCNN : model for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
-    - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to training, validation and test sets
+    - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
     - PlotCode : Plotting metrics from the trained model
   - **Executable**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the Monkey-Species dataset
@@ -48,5 +48,15 @@ Image classification models on various datasets using TenserFlow and Keras
       3. Testing Set size = 814
       4. Number of classes = 150
   - **Classes**
+    - PreTrainedInceptionV3 : importing and loading the pre-trained weights from the InceptionV3 model from keras.applications and configuring the model
+    - MultiCNN : configuring a model by adding Dense and output layers at the bootom of the pre-trained model
+    - ImageGenerators : ImageDataGenerators for flowing theimages to the model from dataset
+    - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to training, validation and test sets
+    - PlotCode : Plotting metrics from the trained model
   - **Executables**
+    - TrainMultiCNN : Training the neural network using data generators from ImageGenerators on the PokemonData dataset
+    - Test : ??
   - **Results**
+    - Accuracy on Training and Validation set of the neural network
+    - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_accuracy.png" width=1000>
+    - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_loss.png" width=1000>
