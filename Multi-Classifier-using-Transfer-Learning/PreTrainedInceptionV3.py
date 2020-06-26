@@ -6,7 +6,7 @@ from tensorflow.keras.applications.inception_v3 import InceptionV3
 local_weights_file = 'pre-trained-model/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
 # defining Inception model and removing top dense layers
-pre_trained_model = InceptionV3(input_shape = (150, 150, 3),
+pre_trained_model = InceptionV3(input_shape = (300, 300, 3),
                                 include_top = False,
                                 weights = None)
 

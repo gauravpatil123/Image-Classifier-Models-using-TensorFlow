@@ -39,7 +39,7 @@ model.compile(optimizer=RMSprop(lr=0.0001),
 # training model
 history = model.fit(TRAIN_GENERATOR,
                     validation_data = VALIDATION_GENERATOR,
-                    epochs = 100,
+                    epochs = 60,
                     verbose = 1,
                     callbacks = [callbacks])
 
