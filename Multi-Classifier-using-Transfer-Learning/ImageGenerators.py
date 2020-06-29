@@ -17,11 +17,11 @@ validation_datagen = ImageDataGenerator(rescale = 1./255.)
 
 # Flowing Images in generator using datagens
 train_generator = train_datagen.flow_from_directory(TRAIN_DIR,
-                                                    batch_size = 200,
+                                                    batch_size = 50,
                                                     class_mode = 'categorical',
                                                     target_size = (300, 300))
 
 validation_generator = validation_datagen.flow_from_directory(VALIDATION_DIR,
-                                                              batch_size = 200,
+                                                              batch_size = 25,
                                                               class_mode = 'categorical',
                                                               target_size = (300, 300))

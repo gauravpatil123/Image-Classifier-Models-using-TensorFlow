@@ -8,7 +8,7 @@ Image classification models on various datasets using TenserFlow and Keras
       1. Training Set Size = 20000 (cats = 10000, dogs = 10000)
       2. Validation Set Size = 5000 (cats = 2500, dogs = 2500)
       3. Test Set Size = 100 (mixed)
-  - **Classes**
+  - **Scripts**
     - BinaryCNN : model for the convolutional neural network binary classifier 
     - BinaryImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Directories and processing of datasets
@@ -27,7 +27,7 @@ Image classification models on various datasets using TenserFlow and Keras
       2. Validation Set Size = 272 (spread across all 10 classes)
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
-  - **Classes**
+  - **Scripts**
     - MultiCNN : model for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
@@ -42,20 +42,21 @@ Image classification models on various datasets using TenserFlow and Keras
   
 3. **Multi-Classifier-with-Transfer-Learning:**
   - **Dataset**
-    - [PokemonData](https://www.kaggle.com/lantian773030/pokemonclassification)
-      1. Training Set Size = 4039
-      2. Validation Set Size = 1984
-      3. Testing Set size = 814
-      4. Number of classes = 150
-  - **Classes**
+    - [Monkey-Species](https://www.kaggle.com/slothkong/10-monkey-species?)
+      1. Training Set Size = 1098 (spread across all 10 classes)
+      2. Validation Set Size = 272 (spread across all 10 classes)
+    - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier-with-Transfer-Learning/data/testing)
+      1. Testing Set Size = 30 (3 images of each class)
+
+  - **Scripts**
     - PreTrainedInceptionV3 : importing and loading the pre-trained weights from the InceptionV3 model from keras.applications and configuring the model
     - MultiCNN : configuring a model by adding Dense and output layers at the bootom of the pre-trained model
     - ImageGenerators : ImageDataGenerators for flowing theimages to the model from dataset
     - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to training, validation and test sets
     - PlotCode : Plotting metrics from the trained model
   - **Executables**
-    - TrainMultiCNN : Training the neural network using data generators from ImageGenerators on the PokemonData dataset
-    - Test : ??
+    - TrainMultiCNN : Training the neural network using data generators from ImageGenerators on the Monkey-Species dataset
+    - TestMultiCNN : Testing the MultiCNN model on the Testing Dataset
   - **Results**
     - Accuracy on Training and Validation set of the neural network
     - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_accuracy.png" width=1000>

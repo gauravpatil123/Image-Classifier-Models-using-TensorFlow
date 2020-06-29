@@ -8,20 +8,15 @@ import PreTrainedInceptionV3 as PTI
 LAST_OUTPUT = PTI.last_output
 PRE_TRAINED_MODEL = PTI.pre_trained_model
 
-# adding trainable convolutional and Maxpooling layers
-xs = layers.Conv2D(128, (3, 3), activation="relu")(LAST_OUTPUT)
-xs = layers.MaxPooling2D(2, 2)(xs)
-#xs = layers.Conv2D(128, (3, 3), activation="relu")(xs)
-#xs = layers.MaxPooling2D(2, 2)(xs)
 # Flatenning the output layer to 1 dimension
-xs = layers.Flatten()(xs)#(LAST_OUTPUT)
+xs = layers.Flatten()(LAST_OUTPUT)
 # Adding a fully connected layers
 xs = layers.Dense(1024, activation="relu")(xs)
-#xs = layers.Dense(512, activation="relu")(xs)
+xs = layers.Dense(512, activation="relu")(xs)
 # Adding Dropout layer
 xs = layers.Dropout(0.3)(xs)
 # Adding output layer for classification
-xs = layers.Dense(150, activation="softmax")(xs)
+xs = layers.Dense(10, activation="softmax")(xs)
 
 # defining model object
 model = Model(PRE_TRAINED_MODEL.input, xs)
