@@ -10,6 +10,8 @@ PRE_TRAINED_MODEL = PTI.pre_trained_model
 
 # Flatenning the output layer to 1 dimension
 xs = layers.Flatten()(LAST_OUTPUT)
+# Adding Dropout layer
+#xs = layers.Dropout(0.2)(xs)
 # Adding a fully connected layers
 xs = layers.Dense(1024, activation="relu")(xs)
 xs = layers.Dense(512, activation="relu")(xs)
