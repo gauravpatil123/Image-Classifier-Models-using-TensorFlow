@@ -21,7 +21,8 @@ class myCallback(tf.keras.callbacks.Callback):
 callbacks = myCallback()
 
 # CNN model
-model = CNN.model
+Model = CNN.BinaryCNN((150, 150, 3), 64, (3, 3), 'relu', 64, (3, 3), 'relu', 0.4, 256, 'relu', 'sigmoid')
+model = Model.build_model()
 
 # model summary
 model.summary()
@@ -37,7 +38,7 @@ model.compile(optimizer = 'adam',loss = 'binary_crossentropy', metrics=['accurac
 history = model.fit(TRAIN_GENERATOR,
                     validation_data = VALIDATION_GENERATOR,
                     steps_per_epoch = 100, # batch size = 200, dataset size = 20000
-                    epochs = 25,
+                    epochs = 15,
                     validation_steps = 25, # batch size = 200, dataset size = 5000
                     verbose = 1,
                     callbacks = [callbacks])

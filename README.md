@@ -9,10 +9,11 @@ Image classification models on various datasets using TenserFlow and Keras
       2. Validation Set Size = 5000 (cats = 2500, dogs = 2500)
       3. Test Set Size = 100 (mixed)
   - **Scripts**
-    - BinaryCNN : model for the convolutional neural network binary classifier 
     - BinaryImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Directories and processing of datasets
     - PlotCode : Plotting metrics from the trained model
+  - **Classes**
+    - BinaryCNN : model class for the convolutional neural network binary classifier 
   - **Executables**
     - TrainBinaryCNN : Training the BinaryCNN model using data generators from BinaryImageGenerator on the cats_and_dogs dataset
   - **Results**
