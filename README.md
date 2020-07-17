@@ -29,12 +29,24 @@ Image classification models on various datasets using TenserFlow and Keras
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
   - **Scripts**
-    - MultiCNN : model for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
     - PlotCode : Plotting metrics from the trained model
+  - **Classes**
+    - MultiCNN : model class for the convolutional neural network multi classifier
   - **Executable**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the Monkey-Species dataset
+      - Model Parameters used in training
+        1. input shape = (300, 300, 3)
+        2. First Convolutional layer: filters = 32, filter shape = (3, 3), activation = 'relu'
+        3. Second Convolutional layer: filters = 64, filter shape = (3, 3), activation = 'relu'
+        4. Third Convolutional layer: filters = 64, filter shape = (3, 3), activation = 'relu'
+        5. Fourth Convolutional layer: filters = 128, filter shape = (3, 3), activation = 'relu'
+        6. Fifth Convolutional layer: filters = 128, filter shape = (3, 3), activation = 'relu'
+        7. Dropout layer: dropout fraction = 0.3
+        8. First fully connected hidden layer: neurons = 512, activation = 'relu'
+        9. Second fully connected hidden layer: neurons = 512, activation = 'relu'
+        10. Output layer: output units = 10, activation = 'softmax'
     - TestMultiCNN : Testing the trained MultiCNN model on the Testing Dataset
   - **Results**
     - Accuracy on Training and Validation set of Multi Classifier
