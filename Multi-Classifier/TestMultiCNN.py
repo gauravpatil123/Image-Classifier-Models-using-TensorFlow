@@ -2,18 +2,23 @@ import tensorflow as tf
 import os
 import numpy as np
 import DatasetDirectoryPreprocessing as DDP
+import MultiCNN as CNN
 from keras_preprocessing import image
 import random
 
 # loading trained model
-model = tf.keras.models.load_model("multiCNN.h5")
+Model = CNN.MultiCNN()
+model = Model.load_model("multiCNN.h5")
 
 # preprocessing test dataset
 NUM_CLASSES = DDP.num_classes
 CLASS_DICT = DDP.class_dict
 TEST_DIR = DDP.test_dir
 test_image_list = os.listdir(TEST_DIR)
-test_image_list.remove(".DS_Store")
+try:
+    test_image_list.remove(".DS_Store")
+except:
+    pass
 num_test_images = len(test_image_list)
 print("Number of Test Images: ", num_test_images)
 random.shuffle(test_image_list)

@@ -21,8 +21,8 @@ class myCallback(tf.keras.callbacks.Callback):
 callbacks = myCallback()
 
 # CNN model
-Model = CNN.BinaryCNN((150, 150, 3), 64, (3, 3), 'relu', 64, (3, 3), 'relu', 0.4, 256, 'relu', 'sigmoid')
-model = Model.build_model()
+Model = CNN.BinaryCNN()
+model = Model.build_model((150, 150, 3), 64, (3, 3), 'relu', 64, (3, 3), 'relu', 0.4, 256, 'relu', 'sigmoid')
 
 # model summary
 model.summary()

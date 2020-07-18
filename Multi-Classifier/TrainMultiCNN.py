@@ -21,11 +21,11 @@ class myCallback(tf.keras.callbacks.Callback):
 callbacks = myCallback()
 
 # CNN model
-Model = CNN.MultiCNN((300, 300, 3), 32, (3, 3), 'relu',
-                     64, (3, 3), 'relu', 64, (3, 3), 'relu',
-                     128, (3, 3), 'relu', 128, (3, 3), 'relu',
-                     0.3, 512, 'relu', 512, 'relu', 10, 'softmax')
-model = Model.build_model()
+Model = CNN.MultiCNN()
+model = Model.build_model((300, 300, 3), 32, (3, 3), 'relu',
+                    64, (3, 3), 'relu', 64, (3, 3), 'relu',
+                    128, (3, 3), 'relu', 128, (3, 3), 'relu',
+                    0.3, 512, 'relu', 512, 'relu', 10, 'softmax')
 
 # model summary
 model.summary()

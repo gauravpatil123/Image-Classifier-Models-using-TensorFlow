@@ -8,14 +8,21 @@ Image classification models on various datasets using TenserFlow and Keras
       1. Training Set Size = 20000 (cats = 10000, dogs = 10000)
       2. Validation Set Size = 5000 (cats = 2500, dogs = 2500)
       3. Test Set Size = 100 (mixed)
-  - **Scripts**
+  - **Processing Scripts**
     - BinaryImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Directories and processing of datasets
     - PlotCode : Plotting metrics from the trained model
   - **Classes**
-    - BinaryCNN : model class for the convolutional neural network binary classifier 
+    - BinaryCNN : model class for the convolutional neural network binary classifier
   - **Executables**
     - TrainBinaryCNN : Training the BinaryCNN model using data generators from BinaryImageGenerator on the cats_and_dogs dataset
+      - Model Parameters used in training
+        1. input shape = (150, 150, 3)
+        2. First Convolutional layer: filters = 64, filter_shape = (3, 3), activation = 'relu'
+        3. Second Convolutional layer: filters = 64, filter_shape = (3, 3), activation = 'relu'
+        4. Dropout layer: dropout fraction = 0.4
+        5. Fully connected hidden layer: neurons = 256, activation = 'relu'
+        6. Output layer: output neurons = 1, output activation = 'sigmoid'
   - **Results**
     - Accuracy on Training and Validation set of the Binary Classifier
     - <img src="Binary-Classifier/Images/train_v_validation_accuracy.png" width=1000>
@@ -28,7 +35,7 @@ Image classification models on various datasets using TenserFlow and Keras
       2. Validation Set Size = 272 (spread across all 10 classes)
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
-  - **Scripts**
+  - **Processing Scripts**
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
     - PlotCode : Plotting metrics from the trained model
