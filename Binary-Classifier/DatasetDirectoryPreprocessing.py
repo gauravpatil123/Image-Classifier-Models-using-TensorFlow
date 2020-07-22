@@ -1,3 +1,9 @@
+"""
+DatasetDirectoryPreprocessing:
+    1. Configures the file paths and directories of the train, validation and test datasets
+    2. prints out the length of the classes and combined length of classes in
+       the train and validation datasets
+"""
 import os
 import zipfile
 

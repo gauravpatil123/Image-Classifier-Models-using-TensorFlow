@@ -1,3 +1,16 @@
+"""
+TrainBinaryCNN:
+    1. Configure myCallback class and initializes a callback per epoch for model
+    2. Builds a neural network model
+    3. prints the model summary
+    4. Initialized the train and validation datagenerators
+    5. Trains the model / fits model on training dataset
+    6. saves the model as "BinaryCNN.h5"
+    7. extracts evaluation metrics from the trained model (accuracy, validation accuracy, loss, validation loss)
+    8. saves comparison plots of the model
+    9. tests the model on the test set
+"""
+
 import tensorflow as tf
 import BinaryImageGenerators as BIG
 import BinaryCNN as CNN

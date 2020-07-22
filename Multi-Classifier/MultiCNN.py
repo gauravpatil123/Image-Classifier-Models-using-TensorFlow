@@ -1,8 +1,15 @@
 import tensorflow as tf
 
 class MultiCNN:
+    """
+    Class to define the neural network model
+    """
+
 
     def __init__(self):
+        """
+        Initializes model to None
+        """
         
         self.model = None
 
@@ -14,6 +21,34 @@ class MultiCNN:
                 dropout, dense1_neurons, dense1_activation, 
                 dense2_neurons, dense2_activation,
                 output_neurons, output_activation):
+        """
+        Input:
+            input_shape: the input shape of image tensor
+            conv1_filters: number of filters for the first convolutional layer
+            conv1_filter_shape: custom filter shape for the first convolutional layer
+            conv1_activation: custom activation function for the first convolutional layer
+            conv2_filters: number of filters for the second convolutional layer
+            conv2_filter_shape: custom filter shape for the second convolutional layer
+            conv2_activation: custom activation function for the second convolutional layer
+            conv3_filters: number of filters for the third convolutional layer
+            conv3_filter_shape: custom filter shape for the third convolutional layer
+            conv3_activation: custom activation function for the third convolutional layer
+            conv4_filters: number of filters for the fourth convolutional layer
+            conv4_filter_shape: custom filter shape for the fourth convolutional layer
+            conv4_activation: custom activation function for the fourth convolutional layer
+            conv5_filters: number of filters for the fifth convolutional layer
+            conv5_filter_shape: custom filter shape for the fifth convolutional layer
+            conv5_activation: custom activation function for the fifth convolutional layer
+            dropout: proportion of neurons to dropout for pruning
+            dense1_neurons: number of neurons for the first fully connected hidden layer
+            dense1_activation: activation function for the first fully connected hidden layer
+            dense2_neurons: number of neurons for the second fully connected hidden layer
+            dense2_activation: activation function for the second fully connected hidden layer
+            output_neurons: number of output neurons
+            output_activation: activation function for the output layer
+        Output:
+            model: the neural network model build using the inputs
+        """
 
         self.model = tf.keras.models.Sequential([
         # First Convolution layer
@@ -51,6 +86,12 @@ class MultiCNN:
         return self.model
 
     def load_model(self, model_name):
+        """
+        Input:
+            model_name: path/name of the model file to be loaded
+        Output:
+            the neural network model loaded from file
+        """
         self.model = tf.keras.models.load_model(model_name)
         return self.model
 
