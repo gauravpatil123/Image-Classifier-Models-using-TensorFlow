@@ -1,6 +1,6 @@
 """
 BinaryImageGenerators:
-    1. Initialized ImageDataGenerators for the testing and validation datagens
+    1. Initializes ImageDataGenerators for the training and validation datagens
     2. Uses the datagens to initialize train and validation generators to pass to 
        Images to the model
 """

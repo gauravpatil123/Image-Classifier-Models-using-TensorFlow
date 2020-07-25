@@ -1,14 +1,16 @@
 """
 TrainBinaryCNN:
-    1. Configure myCallback class and initializes a callback per epoch for model
-    2. Builds a neural network model
-    3. prints the model summary
-    4. Initialized the train and validation datagenerators
-    5. Trains the model / fits model on training dataset
-    6. saves the model as "BinaryCNN.h5"
-    7. extracts evaluation metrics from the trained model (accuracy, validation accuracy, loss, validation loss)
-    8. saves comparison plots of the model
-    9. tests the model on the test set
+    1. Sets the desired training accuracy [0.0, 1.0]
+    2. Define myCallback class and initializes a callback per epoch for model
+    3. Builds a neural network model
+    4. prints the model summary
+    5. Initializes the train and validation datagenerators
+    6. Complies the model using a custom optimizer and loss function
+    7. Trains the model / fits model on training dataset
+    8. saves the model as "BinaryCNN.h5"
+    9. extracts evaluation metrics from the trained model (accuracy, validation accuracy, loss, validation loss)
+    10. saves comparison plots of the model
+    11. tests the model on the test set
 """
 
 import tensorflow as tf

@@ -1,3 +1,8 @@
+"""
+PlotCode:
+    Defines the plot function to save plot images of the metrics from the trained model
+"""
+
 import matplotlib.pyplot as plt
 
 def plot(y1, y2, x, param, Set1, Set2, color1, color2):
@@ -12,7 +17,7 @@ def plot(y1, y2, x, param, Set1, Set2, color1, color2):
         color1: line color for set y1
         color2: line color for set y2
     Action:
-        The plotted figure is saved in Images/ directory
+        The plotted graph is saved in 'Images/' directory
     """
     plt.figure(figsize=(50, 30), dpi = 120)
     plt.plot(x, y1, color1, linewidth = 3)

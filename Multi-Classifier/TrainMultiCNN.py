@@ -1,3 +1,16 @@
+"""
+TrainMultiCNN:
+    1. Sets the desired training accuracy [0.0, 1.0]
+    2. Define myCallback class and initializes a callback per epoch for model
+    3. Builds a neural network model
+    4. prints the model summary
+    5. Initializes the train and validation datagenerators
+    6. Compiles the model using a custom optimizer and loss function
+    7. Trains the model / fits model on training dataset
+    8. saves the model as "multiCNN.h5"
+    9. Extracts the evaluation metrics from the trained model (accuracy, validation)
+    10. Saves comparison plots of the model
+"""
 import tensorflow as tf
 import MultiImageGenerators as MIG
 import MultiCNN as CNN

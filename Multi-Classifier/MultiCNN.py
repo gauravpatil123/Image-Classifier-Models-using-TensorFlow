@@ -5,7 +5,6 @@ class MultiCNN:
     Class to define the neural network model
     """
 
-
     def __init__(self):
         """
         Initializes model to None
