@@ -1,3 +1,7 @@
+"""
+MultiCNN:
+    Adds bottom layers to the pretrained (Inception) model
+"""
 from tensorflow.keras import layers
 from tensorflow.keras import Model
 from tensorflow.keras.applications.inception_v3 import InceptionV3

@@ -1,3 +1,10 @@
+"""
+ImageGenerators:
+    1. Initializes ImageDataGenerators for the training and validation datagens,
+       Using Data-Augmentation parameters to add synthetic data in the training dataset
+    2. Uses the datagens to initialize train and validation generators to flow the Images
+       to the model
+"""
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import DatasetDirectoryPreprocessing as DDP
 

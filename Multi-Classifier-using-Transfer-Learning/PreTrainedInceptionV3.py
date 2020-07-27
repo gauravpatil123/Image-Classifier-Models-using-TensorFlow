@@ -1,3 +1,11 @@
+"""
+PreTrainedInceptionV3:
+    1. loads the pretrained InceptionV3 model from locally saved weights file
+    2. Set the top layers of InceptionV3 model to untrainable
+    3. prints the model summary
+    4. sets the 'mixed8' layer from the model as the last output layer to pass to 
+       custom added bottom layers when training
+"""
 from tensorflow.keras import layers
 from tensorflow.keras import Model
 from tensorflow.keras.applications.inception_v3 import InceptionV3

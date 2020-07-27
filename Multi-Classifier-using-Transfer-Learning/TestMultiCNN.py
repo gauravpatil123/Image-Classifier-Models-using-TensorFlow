@@ -1,3 +1,11 @@
+"""
+TestMultiCNN:
+    1. Loads trained model from the saved file
+    2. Initializes and shuffles the test dataset list
+    3. predicts  the test dataset using the trained model
+    4. calculates accuracy of the test dataset
+"""
+
 import tensorflow as tf
 import os
 import numpy as np

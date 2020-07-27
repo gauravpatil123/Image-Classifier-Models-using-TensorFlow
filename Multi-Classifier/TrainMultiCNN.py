@@ -1,6 +1,6 @@
 """
 TrainMultiCNN:
-    1. Sets the desired training accuracy [0.0, 1.0]
+    1. Sets the desired training accuracy [0.0, 1.0] to 0.999
     2. Define myCallback class and initializes a callback per epoch for model
     3. Builds a neural network model
     4. prints the model summary

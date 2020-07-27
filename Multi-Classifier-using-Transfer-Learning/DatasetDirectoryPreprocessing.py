@@ -1,5 +1,9 @@
+"""
+DatasetDirectoryPreprocessing:
+    1. Configure the file paths and directories of the train, validation and test datasets
+    2. Initializes a dictionary 'class_dict' to store all the classess and prints number of classes 
+"""
 import os
-import shutil
 
 base_dir = "data/Monkey-Species/"
 
