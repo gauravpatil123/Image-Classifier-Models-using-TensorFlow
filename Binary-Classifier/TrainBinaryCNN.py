@@ -68,8 +68,16 @@ loss = history.history['loss']
 val_loss = history.history['val_loss']
 epochs = range(len(acc))
 
+acc_graph = PC.Plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
+acc_graph()
+
+val_graph = PC.Plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
+val_graph()
+
+"""
 PC.plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
 PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
+"""
 
 # testing model on test set
 TEST_DIR = DDP.test_dir
