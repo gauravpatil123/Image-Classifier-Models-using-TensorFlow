@@ -5,7 +5,6 @@ DatasetDirectoryPreprocessing:
        the train and validation datasets
 """
 import os
-# import zipfile
 
 train_dir = "data/cats_and_dogs/training/"
 validation_dir = "data/cats_and_dogs/validation/"
