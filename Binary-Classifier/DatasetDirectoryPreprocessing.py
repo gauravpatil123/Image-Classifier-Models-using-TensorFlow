@@ -1,6 +1,6 @@
 """
 DatasetDirectoryPreprocessing:
-    1. prints out the length of the classes and combined length of classes in
+    1. Prints out the length of the classes and combined length of classes in
        the train and validation datasets using standard logger
     2. Initailizes and calls a log_directory object of class DatasetDirectories
     3. Initializes train, validation and test directory paths to be used globally
@@ -81,7 +81,7 @@ log_directories()
 
 train_dir = log_directories.get_train_dir()
 validation_dir = log_directories.get_val_dir()
-test_dir = log_directories.get_val_dir()
+test_dir = log_directories.get_test_dir()
 
 """
 train_dir = "data/cats_and_dogs/training/" # critical to initialize after class defination

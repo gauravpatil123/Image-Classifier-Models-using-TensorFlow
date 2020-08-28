@@ -79,6 +79,7 @@ PC.plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
 PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
 """
 
+"""
 # testing model on test set
 TEST_DIR = DDP.test_dir
 TEST_LIST  = os.listdir(TEST_DIR)
@@ -104,3 +105,5 @@ for fn in TEST_LIST:
         print("\n" + fn + " is a cat")
     else:
         print("\n" + fn + " is a dog")
+
+"""
