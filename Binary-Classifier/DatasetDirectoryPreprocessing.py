@@ -44,7 +44,7 @@ class DatasetDirectories:
         """
         prints the training and validation dataset statistics in command prompt
         """
-        logging.basicConfig(format='%(message)s', level=logging.DEBUG)
+        logging.basicConfig(format='%(message)s', level=logging.INFO)
         train_cats_log = "\nTraining Cats Images = " + str(len(self.train_cats_fname))
         train_dogs_log = "\nTraining Dogs Images = " + str(len(self.train_dogs_fname))
         train_log = "\nTotal training Images = " + str(len(self.train_cats_fname) + len(self.train_dogs_fname))

@@ -14,7 +14,7 @@ model = Model.load_model("binaryCNN.h5")
 TEST_DIR = DDP.test_dir
 TEST_LIST  = os.listdir(TEST_DIR)
 
-logging.basicConfig(format='%(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(message)s', level=logging.INFO)
 message = "\nEValuating model on test set"
 test_set_log = "\nTest set size = " + str(len(TEST_LIST))
 logging.info(message)
