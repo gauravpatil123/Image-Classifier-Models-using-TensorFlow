@@ -35,12 +35,11 @@ Image classification models on various datasets using TenserFlow and Keras
       2. Validation Set Size = 272 (spread across all 10 classes)
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
-  - **Processing Scripts**
+  - **Classes**
+    - MultiCNN : model class for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
     - PlotCode : Plotting metrics from the trained model
-  - **Classes**
-    - MultiCNN : model class for the convolutional neural network multi classifier
   - **Executable**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the Monkey-Species dataset
       - Model Parameters used in training
