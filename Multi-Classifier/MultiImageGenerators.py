@@ -31,7 +31,7 @@ class Generators:
          fill_mode: type of fill of image voids
 
       Action:
-         1. Initializes the train datagen woth data augmentation
+         1. Initializes the train datagen with data augmentation
          2. Initializes the validation datagen
       """
 
