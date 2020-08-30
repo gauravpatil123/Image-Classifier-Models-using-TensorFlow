@@ -49,7 +49,7 @@ class BinaryCNN:
                 tf.keras.layers.Dense(dense_neurons, activation=dense_activation),
                 # Output layer for binary classification
                 tf.keras.layers.Dense(1, activation=output_activation)
-        ])
+            ])
 
         return self.model
     
