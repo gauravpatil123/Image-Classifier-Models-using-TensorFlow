@@ -67,7 +67,7 @@ Image classification models on various datasets using TenserFlow and Keras
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier-with-Transfer-Learning/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
 
-  - **Scripts**
+  - **Classes**
     - PreTrainedInceptionV3 : importing and loading the pre-trained weights from the InceptionV3 model from keras.applications and configuring the model
     - MultiCNN : configuring a model by adding Dense and output layers at the bootom of the pre-trained model
     - ImageGenerators : ImageDataGenerators for flowing theimages to the model from dataset
