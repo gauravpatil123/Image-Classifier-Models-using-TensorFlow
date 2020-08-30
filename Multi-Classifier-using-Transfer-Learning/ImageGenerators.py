@@ -40,7 +40,7 @@ class Generators:
       
       self.validation_datagen = ImageDataGenerator(rescale = 1./255)
 
-   def create_train_generator(self, dataset_dir, batch_size, class_mode = 'categorical', target_size):
+   def create_train_generator(self, dataset_dir, batch_size , target_size, class_mode = 'categorical'):
       """
       Input:
          dataset_dir: directory path for the training dataset
@@ -57,7 +57,7 @@ class Generators:
                                                                target_size = target_size)
       return train_generator
 
-   def create_val_generator(self, dataset_dir, batch_size, class_mode = 'categorical', target_size):
+   def create_val_generator(self, dataset_dir, batch_size, target_size, class_mode = 'categorical'):
       """
       Input:
          dataset_dir: directory path for the training dataset
@@ -75,8 +75,8 @@ class Generators:
       return validation_generator
 
 datagens = Generators()
-train_generator = datagens.create_train_generator(TRAIN_DIR, 50, class_mode='categorical', (300, 300))
-validation_generator = datagens.create_val_generator(VALIDATION_DIR, 25, class_mode='categorical', (300, 300))
+train_generator = datagens.create_train_generator(TRAIN_DIR, 50, (300, 300), class_mode='categorical')
+validation_generator = datagens.create_val_generator(VALIDATION_DIR, 25, (300, 300), class_mode='categorical')
 
 """
 train_datagen = ImageDataGenerator(rescale = 1./255.,
