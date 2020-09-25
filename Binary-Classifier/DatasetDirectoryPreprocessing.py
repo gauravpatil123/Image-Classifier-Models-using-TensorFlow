@@ -8,9 +8,6 @@ DatasetDirectoryPreprocessing:
 import os
 import logging
 
-# TODO: use standard logger instead of print, change the data structure to class
-# TODO: after changing data structure, initialize the train, val, and test directories to be used globally
-
 class DatasetDirectories:
     
     """
@@ -76,33 +73,10 @@ class DatasetDirectories:
         """
         return self.test_dir
 
+# Initializing directories to be used in training
 log_directories = DatasetDirectories("data/cats_and_dogs/training/", "data/cats_and_dogs/validation/", "data/cats_and_dogs/test/mixed/")
 log_directories()
 
 train_dir = log_directories.get_train_dir()
 validation_dir = log_directories.get_val_dir()
 test_dir = log_directories.get_test_dir()
-
-"""
-train_dir = "data/cats_and_dogs/training/" # critical to initialize after class defination
-validation_dir = "data/cats_and_dogs/validation/" # critical to initialize after class defination
-test_dir = "data/cats_and_dogs/test/mixed/" # critical to initialize after class defination
-"""
-
-"""
-train_cats_dir = os.path.join(train_dir, "cats")
-train_dogs_dir = os.path.join(train_dir, "dogs")
-train_cats_fname = os.listdir(train_cats_dir)
-train_dogs_fname = os.listdir(train_dogs_dir)
-print("\nTraining Cats Images = ", len(train_cats_fname))
-print("\nTraining Dogs Images = ", len(train_dogs_fname))
-print("\nTotal training Images = ", len(train_cats_fname) + len(train_dogs_fname))
-
-validation_cats_dir = os.path.join(validation_dir, "cats")
-validation_dogs_dir = os.path.join(validation_dir, "dogs")
-validation_cats_fname = os.listdir(validation_cats_dir)
-validation_dogs_fname = os.listdir(validation_dogs_dir)
-print("\nValidation Cats Images = ", len(validation_cats_fname))
-print("\nValidation Dogs Images = ", len(validation_dogs_fname))
-print("\nTotal validation Images = ", len(validation_cats_fname) + len(validation_dogs_fname))
-"""

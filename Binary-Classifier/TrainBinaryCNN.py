@@ -73,37 +73,3 @@ acc_graph()
 
 val_graph = PC.Plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
 val_graph()
-
-"""
-PC.plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
-PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
-"""
-
-"""
-# testing model on test set
-TEST_DIR = DDP.test_dir
-TEST_LIST  = os.listdir(TEST_DIR)
-print("\nEvaluating model on test Set")
-print("\nTest set size = ", len(TEST_LIST))
-
-for fn in TEST_LIST:
-    # predicting images
-    path = os.path.join(TEST_DIR + fn)
-    #try:
-    img = image.load_img(path, target_size=(150, 150))
-    #except:
-    #    continue
-
-    xs = image.img_to_array(img)
-    xs = np.expand_dims(xs, axis = 0)
-
-    images = np.vstack([xs])
-    classes = model.predict(images, batch_size = 20)
-    #print(fn)
-    #print(classes)
-    if classes[0] < 0.5:
-        print("\n" + fn + " is a cat")
-    else:
-        print("\n" + fn + " is a dog")
-
-"""
