@@ -8,12 +8,11 @@ Image classification models on various datasets using TenserFlow and Keras
       1. Training Set Size = 20000 (cats = 10000, dogs = 10000)
       2. Validation Set Size = 5000 (cats = 2500, dogs = 2500)
       3. Test Set Size = 100 (mixed)
-  - **Processing Scripts**
-    - BinaryImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
-    - DatasetDirectoryPreprocessing : Directories and processing of datasets
-    - PlotCode : Plotting metrics from the trained model
   - **Classes**
     - BinaryCNN : model class for the convolutional neural network binary classifier
+    - BinaryImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
+    - DatasetDirectoryPreprocessing : Initializing and logging directories of datasets
+    - PlotCode : Plotting metrics from the trained model
   - **Executables**
     - TrainBinaryCNN : Training the BinaryCNN model using data generators from BinaryImageGenerator on the cats_and_dogs dataset
       - Model Parameters used in training
@@ -23,6 +22,7 @@ Image classification models on various datasets using TenserFlow and Keras
         4. Dropout layer: dropout fraction = 0.4
         5. Fully connected hidden layer: neurons = 256, activation = 'relu'
         6. Output layer: output neurons = 1, output activation = 'sigmoid'
+    - TestBinaryCNN : Testing the trained BinaryCNN model on test dataset
   - **Results**
     - Accuracy on Training and Validation set of the Binary Classifier
     - <img src="Binary-Classifier/Images/train_v_validation_accuracy.png" width=1000>
@@ -35,12 +35,11 @@ Image classification models on various datasets using TenserFlow and Keras
       2. Validation Set Size = 272 (spread across all 10 classes)
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
-  - **Processing Scripts**
+  - **Classes**
+    - MultiCNN : model class for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
     - PlotCode : Plotting metrics from the trained model
-  - **Classes**
-    - MultiCNN : model class for the convolutional neural network multi classifier
   - **Executable**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the Monkey-Species dataset
       - Model Parameters used in training
@@ -68,7 +67,7 @@ Image classification models on various datasets using TenserFlow and Keras
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier-with-Transfer-Learning/data/testing)
       1. Testing Set Size = 30 (3 images of each class)
 
-  - **Scripts**
+  - **Classes**
     - PreTrainedInceptionV3 : importing and loading the pre-trained weights from the InceptionV3 model from keras.applications and configuring the model
     - MultiCNN : configuring a model by adding Dense and output layers at the bootom of the pre-trained model
     - ImageGenerators : ImageDataGenerators for flowing theimages to the model from dataset

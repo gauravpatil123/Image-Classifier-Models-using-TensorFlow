@@ -12,6 +12,10 @@ import numpy as np
 import DatasetDirectoryPreprocessing as DDP
 from keras_preprocessing import image
 import random
+import logging
+
+# standard logger configuration
+logging.basicConfig(format="%(message)s", level=logging.INFO)
 
 # loading trained model
 model = tf.keras.models.load_model("multiCNN.h5")
@@ -28,9 +32,10 @@ except:
     pass
 
 num_test_images = len(test_image_list)
-print("Number of Test Images: ", num_test_images)
+test_images_log = "Number of Test Images: " + str(num_test_images)
+logging.info(test_images_log) 
 random.shuffle(test_image_list)
-print(test_image_list)
+logging.info(str(test_image_list))
 
 TOTAL_TEST_IMAGES = 0
 accurate_images = 0
@@ -43,20 +48,24 @@ for fn in test_image_list:
     xs = np.expand_dims(xs, axis = 0)
 
     classes = model.predict(xs)
-    print(classes)
+    logging.info(str(classes))
 
     for idx in range(NUM_CLASSES):
         if classes[0][idx] > 0.5:
             key = "n" + str(idx)
-            print("\n" + fn + " is a " + CLASS_DICT.get(key))
+            message = "\n" + str(fn) + " is a " + str(CLASS_DICT.get(key))
+            logging.info(message)
             TOTAL_TEST_IMAGES += 1
             fn_label = fn[:2]
             if key == fn_label:
                 accurate_images += 1
 
 
-print("Total tested images = ", TOTAL_TEST_IMAGES)
+test_images_log = "Total tested images = " + str(TOTAL_TEST_IMAGES)
+logging.info(test_images_log)
 accuracy = accurate_images / TOTAL_TEST_IMAGES
 accuracy = accuracy * 100
-print("Accuracy = " + str(accuracy) + "%")
+acc_log = "Accuracy = " + str(accuracy) + "%"
+logging.info(acc_log)
+
 

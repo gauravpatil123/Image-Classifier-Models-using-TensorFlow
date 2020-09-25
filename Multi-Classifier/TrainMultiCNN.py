@@ -69,5 +69,8 @@ loss = history.history['loss']
 val_loss = history.history['val_loss']
 epochs = range(len(acc))
 
-PC.plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
-PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
+acc_graph = PC.Graph(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
+acc_graph()
+
+loss_graph = PC.Graph(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
+loss_graph()
