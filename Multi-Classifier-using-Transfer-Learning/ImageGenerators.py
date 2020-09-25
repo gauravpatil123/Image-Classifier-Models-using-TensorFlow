@@ -74,30 +74,7 @@ class Generators:
                                                                          target_size = target_size)
       return validation_generator
 
+# initializing generators for training
 datagens = Generators()
 train_generator = datagens.create_train_generator(TRAIN_DIR, 50, (300, 300), class_mode='categorical')
 validation_generator = datagens.create_val_generator(VALIDATION_DIR, 25, (300, 300), class_mode='categorical')
-
-"""
-train_datagen = ImageDataGenerator(rescale = 1./255.,
-                                   rotation_range = 40,
-                                   width_shift_range = 0.2,
-                                   height_shift_range = 0.2,
-                                   shear_range = 0.2,
-                                   zoom_range = 0.2,
-                                   horizontal_flip = True,
-                                   fill_mode = 'nearest')
-
-validation_datagen = ImageDataGenerator(rescale = 1./255.)
-
-# Flowing Images in generator using datagens
-train_generator = train_datagen.flow_from_directory(TRAIN_DIR,
-                                                    batch_size = 50,
-                                                    class_mode = 'categorical',
-                                                    target_size = (300, 300))
-
-validation_generator = validation_datagen.flow_from_directory(VALIDATION_DIR,
-                                                              batch_size = 25,
-                                                              class_mode = 'categorical',
-                                                              target_size = (300, 300))
-"""

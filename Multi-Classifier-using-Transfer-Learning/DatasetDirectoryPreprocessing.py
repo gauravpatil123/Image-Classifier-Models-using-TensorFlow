@@ -64,30 +64,9 @@ class DatasetDirectories:
         """
         return self.num_classes
 
+# initializing directories for training and testing
 dataset_dir = DatasetDirectories("data/Monkey-Species/", "data/testing/")
 train_dir, validation_dir, test_dir = dataset_dir.get_directories()
 num_classes = dataset_dir.get_num_classes()
 class_dict = dataset_dir.get_classes()
 dataset_dir()
-
-"""
-base_dir = "data/Monkey-Species/"
-
-train_dir = os.path.join(base_dir, "training/")
-validation_dir = os.path.join(base_dir, "validation/")
-test_dir = "data/testing/"
-
-class_dict = {"n0" : "mantled howler",
-              "n1" : "patas monkey",
-              "n2" : "bald uakari",
-              "n3" : "japanese macaque",
-              "n4" : "pygmy marmoset",
-              "n5" : "white headed capuchin",
-              "n6" : "silvery marmoset",
-              "n7" : "common squirrel monkey",
-              "n8" : "black headed night monkey",
-              "n9" : "nilgiri langur"}
-
-num_classes = len(class_dict)
-print("Number of classes: ", num_classes)
-"""

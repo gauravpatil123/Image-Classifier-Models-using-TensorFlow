@@ -72,8 +72,3 @@ acc_graph()
 
 loss_graph = PC.Graph(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
 loss_graph()
-
-"""
-PC.plot(acc, val_acc, epochs, 'accuracy', 'train', 'validation', 'g', 'b')
-PC.plot(loss, val_loss, epochs, 'loss', 'train', 'validation', 'r', 'orange')
-"""

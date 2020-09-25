@@ -56,22 +56,6 @@ class MODEL:
         """
         return self.model
 
+# initializing model for training
 __Model__ = MODEL(PRE_TRAINED_MODEL, LAST_OUTPUT, 1024, "relu", 512, "relu", 0.3, 10, "softmax")
 model = __Model__.get_model()
-
-"""
-# Flatenning the output layer to 1 dimension
-xs = layers.Flatten()(LAST_OUTPUT)
-# Adding Dropout layer
-#xs = layers.Dropout(0.2)(xs)
-# Adding a fully connected layers
-xs = layers.Dense(1024, activation="relu")(xs)
-xs = layers.Dense(512, activation="relu")(xs)
-# Adding Dropout layer
-xs = layers.Dropout(0.3)(xs)
-# Adding output layer for classification
-xs = layers.Dense(10, activation="softmax")(xs)
-
-# defining model object
-model = Model(PRE_TRAINED_MODEL.input, xs)
-"""
