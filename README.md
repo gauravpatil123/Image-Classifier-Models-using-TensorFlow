@@ -1,6 +1,29 @@
 # Image-Classifier-Models-using-TensorFlow
 Image classification models on various datasets using TenserFlow and Keras
 
+**Contents**
+- About
+- Models
+  1. Binary-Classifier
+    - Dataset
+    - Classes
+    - Executables
+    - Results
+  2. Multi-Classifier
+    - Dataset
+    - Classes
+    - Executables
+    - Results
+  3. Multi-Classifier-with-Transfer-Learning
+    - Dataset
+    - Classes
+    - Executables
+    - Results
+- Conclusions
+
+**About**
+
+
 **Models**
 1. **Binary-Classifier:**
   - **Dataset**
@@ -40,7 +63,7 @@ Image classification models on various datasets using TenserFlow and Keras
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
     - DatasetDirectoryPreprocessing : Configuring the directories and processing the dataset
     - PlotCode : Plotting metrics from the trained model
-  - **Executable**
+  - **Executables**
     - TrainMultiCNN : Training the MultiCNN model using data generators from MultiImageGenerator on the Monkey-Species dataset
       - Model Parameters used in training
         1. input shape = (300, 300, 3)
