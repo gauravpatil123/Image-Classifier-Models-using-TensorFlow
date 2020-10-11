@@ -1,5 +1,5 @@
 # Image-Classifier-Models-using-TensorFlow
-Image classification models on various datasets using TenserFlow and Keras
+Image classification models on various datasets using TensorFlow and Keras
 
 **Contents**
 - About
@@ -22,7 +22,9 @@ Image classification models on various datasets using TenserFlow and Keras
 - Conclusions
 
 **About**
+I have undertaken this project to demonstrate my interpretation of Image Classifiers. I have built three Image classifiers (Binary-Classifier, Multi-Classifier and Multi-Classifier-with-Transfer-Learning) and trained them on opensource datasets from kaggel dot com. I have used TensorFlow 2.0 to build these classifiers. The build design is object oriented containing several classes. The executable code to train and test the models is written as a script.
 
+My conclusions from each model are at the end.
 
 **Models**
 1. **Binary-Classifier:**
@@ -47,8 +49,9 @@ Image classification models on various datasets using TenserFlow and Keras
         6. Output layer: output neurons = 1, output activation = 'sigmoid'
     - TestBinaryCNN : Testing the trained BinaryCNN model on test dataset
   - **Results**
-    - Accuracy on Training and Validation set of the Binary Classifier
+    - Accuracy of the Binary Classifier on Training and Validation set
     - <img src="Binary-Classifier/Images/train_v_validation_accuracy.png" width=1000>
+    - Loss of the Binary Classifier on Training and Validation set
     - <img src="Binary-Classifier/Images/train_v_validation_loss.png" width=1000>
    
 2. **Multi-Classifier:**
@@ -78,8 +81,9 @@ Image classification models on various datasets using TenserFlow and Keras
         10. Output layer: output units = 10, activation = 'softmax'
     - TestMultiCNN : Testing the trained MultiCNN model on the Testing Dataset
   - **Results**
-    - Accuracy on Training and Validation set of Multi Classifier
+    - Accuracy of Multi Classifier on Training and Validation set 
     - <img src="Multi-Classifier/Images/train_v_validation_accuracy.png" width=1000>
+    - Loss of Multi Classifier on Training and Validation set
     - <img src="Multi-Classifier/Images/train_v_validation_loss.png" width=1000>
   
 3. **Multi-Classifier-with-Transfer-Learning:**
@@ -100,6 +104,12 @@ Image classification models on various datasets using TenserFlow and Keras
     - TrainMultiCNN : Training the neural network using data generators from ImageGenerators on the Monkey-Species dataset
     - TestMultiCNN : Testing the MultiCNN model on the Testing Dataset
   - **Results**
-    - Accuracy on Training and Validation set of the neural network
+    - Accuracy of the classifier on Training and Validation set
     - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_accuracy.png" width=1000>
+    - Loss of the classifier on Training and Validation set
     - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_loss.png" width=1000>
+
+**Conclusions**
+1. Training the Binary-Classifier just for 15 epochs on the dataset is enough for this model to reach a very high train accuracy >98% and high validataion accuracy ~80%. I have achieved these results by adding two convolutional layers in the model and then used a dropout layer to regularize the neural network and to apply pruning to the model to avoid the problems of overfitting. 
+I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning. The model classifies well on unseen cats and dogs images due to the application of the mentioned techiques.
+2. 
