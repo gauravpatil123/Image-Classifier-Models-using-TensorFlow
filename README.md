@@ -21,7 +21,7 @@ Image classification models on various datasets using TensorFlow and Keras
     - Results
 - Conclusions
 
-**About**
+**About**</br>
 I have undertaken this project to demonstrate my interpretation of Image Classifiers. I have built three Image classifiers (Binary-Classifier, Multi-Classifier and Multi-Classifier-with-Transfer-Learning) and trained them on opensource datasets from kaggel dot com. I have used TensorFlow 2.0 to build these classifiers. The build design is object oriented containing several classes. The executable code to train and test the models is written as a script.
 
 My conclusions from each model are at the end.
