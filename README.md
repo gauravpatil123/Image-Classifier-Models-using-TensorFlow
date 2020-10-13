@@ -69,7 +69,7 @@ I have undertaken this project to demonstrate my interpretation of Image Classif
       1. Training Set Size = 1098 (spread across all 10 classes)
       2. Validation Set Size = 272 (spread across all 10 classes)
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
-      1. Testing Set Size = 30 (3 images of each class)
+      1. Testing Set Size = 80 (3 images of each class)
   - **Classes**
     - MultiCNN : model class for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
