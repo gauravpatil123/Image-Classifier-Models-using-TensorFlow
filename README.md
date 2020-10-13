@@ -24,8 +24,6 @@ Image classification models on various datasets using TensorFlow and Keras
 **About**</br>
 I have undertaken this project to demonstrate my interpretation of Image Classifiers. I have built three Image classifiers (Binary-Classifier, Multi-Classifier and Multi-Classifier-with-Transfer-Learning) and trained them on opensource datasets from kaggel dot com. I have used TensorFlow 2.0 to build these classifiers. The build design is object oriented containing several classes. The executable code to train and test the models is written as a script.
 
-My conclusions from each model are at the end.
-
 **Models**
 1. **Binary-Classifier:**
   - **Dataset**
@@ -122,5 +120,6 @@ My conclusions from each model are at the end.
 
 **Conclusions**
 1. Training the Binary-Classifier just for 15 epochs on the dataset is enough for this model to reach a very high train accuracy >98% and high validataion accuracy ~80%. I have achieved these results by adding two convolutional layers in the model and then used a dropout layer to regularize the neural network and to apply pruning to the model to avoid the problems of overfitting. 
-I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning. The model classifies well on unseen cats and dogs images due to the application of the mentioned techiques.
-2.##
+I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning.
+2. The model classifies well on unseen cats and dogs images due to the application of the mentioned techiques. Hence the resulting F1 Score is high for the trained Classifier model (0.81 for classifying dog images, 0.738 for classifying cat images)
+3. 
