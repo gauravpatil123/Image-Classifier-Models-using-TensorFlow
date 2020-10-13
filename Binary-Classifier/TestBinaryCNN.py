@@ -26,11 +26,6 @@ TEST_DOG_DIR = DDP.test_dog_dir
 TEST_CAT_LIST = os.listdir(TEST_CAT_DIR)
 TEST_DOG_LIST = os.listdir(TEST_DOG_DIR)
 
-logging.basicConfig(format='%(message)s', level=logging.INFO)
-message = "\nEvaluating model on test set"
-test_set_log = "\nTest set size = " + str(len(TEST_CAT_LIST) + len(TEST_DOG_LIST))
-logging.info(message)
-logging.info(test_set_log)
 
 if ".DS_Store" in TEST_LIST:
     TEST_LIST.remove(".DS_Store")
@@ -40,6 +35,12 @@ if ".DS_Store" in TEST_CAT_LIST:
 
 if ".DS_Store" in TEST_DOG_LIST:
     TEST_DOG_LIST.remove(".DS_Store")
+
+logging.basicConfig(format='%(message)s', level=logging.INFO)
+message = "\nEvaluating model on test set"
+test_set_log = "\nTest set size = " + str(len(TEST_CAT_LIST) + len(TEST_DOG_LIST))
+logging.info(message)
+logging.info(test_set_log)
 
 def test_cat_stats(verbose):
     """

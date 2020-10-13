@@ -33,6 +33,7 @@ My conclusions from each model are at the end.
       1. Training Set Size = 20000 (cats = 10000, dogs = 10000)
       2. Validation Set Size = 5000 (cats = 2500, dogs = 2500)
       3. Test Set Size = 100 (mixed)
+    - The mixed test set is preprocessed into cats and dogs classes prior to using the dataset
   - **Classes**
     - BinaryCNN : model class for the convolutional neural network binary classifier
     - BinaryImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
@@ -53,6 +54,16 @@ My conclusions from each model are at the end.
     - <img src="Binary-Classifier/Images/train_v_validation_accuracy.png" width=1000>
     - Loss of the Binary Classifier on Training and Validation set
     - <img src="Binary-Classifier/Images/train_v_validation_loss.png" width=1000>
+    - Results of the trained model on test set
+      - Scores of model as a Cat classifier
+        1. Precision = 0.620 
+        2. Recall = 0.912
+        3. F1 Score = 0.738
+      - Scores of model as a Dog classifier
+        1. Precision = 0.940 
+        2. Recall = 0.712
+        3. F1 Score = 0.810
+      - <img src="Binary-Classifier/Images/test_results" width=1000>
    
 2. **Multi-Classifier:**
   - **Dataset**
