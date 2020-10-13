@@ -63,7 +63,7 @@ My conclusions from each model are at the end.
         1. Precision = 0.940 
         2. Recall = 0.712
         3. F1 Score = 0.810
-      - <img src="Binary-Classifier/Images/test_results" width=1000>
+      - <img src="Binary-Classifier/Images/test_results.png" height=500>
    
 2. **Multi-Classifier:**
   - **Dataset**
