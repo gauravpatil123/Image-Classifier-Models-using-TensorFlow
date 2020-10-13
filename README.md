@@ -123,4 +123,4 @@ My conclusions from each model are at the end.
 **Conclusions**
 1. Training the Binary-Classifier just for 15 epochs on the dataset is enough for this model to reach a very high train accuracy >98% and high validataion accuracy ~80%. I have achieved these results by adding two convolutional layers in the model and then used a dropout layer to regularize the neural network and to apply pruning to the model to avoid the problems of overfitting. 
 I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning. The model classifies well on unseen cats and dogs images due to the application of the mentioned techiques.
-2. 
+2.##
