@@ -43,7 +43,7 @@ if ".DS_Store" in TEST_DOG_LIST:
 
 def test_cat_stats(verbose):
     """
-    Runs the model on test set and calculates the stats on the model's performance as a Cat identifier
+    Runs the model on test set and calculates the stats on the model's performance as a Cat classifier
 
     Input:
         verbose: Boolean to switch on command prompt message for each image test
@@ -109,7 +109,7 @@ def test_cat_stats(verbose):
     precision_log = "\nPrecision = " + str(precision)
     recall_log = "\nRecall = " + str(recall)
     f1_log = "\nF1 Score = " + str(F1_Score)
-    message = "\nTest Set results on Model as a Cat Identifier"
+    message = "\nTest Set results on Model as a Cat classifier"
 
     logging.info(message)
     logging.info(precision_log)
@@ -118,7 +118,7 @@ def test_cat_stats(verbose):
 
 def test_doc_stats(verbose):
     """
-    Runs the model on test set and calculates the stats on the model's performance as a Dog identifier
+    Runs the model on test set and calculates the stats on the model's performance as a Dog classifier
     """
     epsilon = 0.001
     true_positives = epsilon
@@ -181,7 +181,7 @@ def test_doc_stats(verbose):
     precision_log = "\nPrecision = " + str(precision)
     recall_log = "\nRecall = " + str(recall)
     f1_log = "\nF1 Score = " + str(F1_Score)
-    message = "\nTest Set results on Model as a Dog Identifier"
+    message = "\nTest Set results on Model as a Dog classifier"
 
     logging.info(message)
     logging.info(precision_log)
