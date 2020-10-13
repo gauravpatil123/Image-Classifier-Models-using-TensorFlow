@@ -73,6 +73,20 @@ class DatasetDirectories:
         """
         return self.test_dir
 
+    def get_test_cat_dir(self):
+        """
+        Returns the directory path for cat images in test directory
+        """
+        cat_dir = self.test_dir + "cats/"
+        return cat_dir
+
+    def get_test_dog_dir(self):
+        """
+        Returns the directory path for dog images in test directory
+        """
+        dog_dir = self.test_dir + "dogs/"
+        return dog_dir
+
 # Initializing directories to be used in training
 log_directories = DatasetDirectories("data/cats_and_dogs/training/", "data/cats_and_dogs/validation/", "data/cats_and_dogs/test/mixed/")
 log_directories()
@@ -80,3 +94,5 @@ log_directories()
 train_dir = log_directories.get_train_dir()
 validation_dir = log_directories.get_val_dir()
 test_dir = log_directories.get_test_dir()
+test_cat_dir = log_directories.get_test_cat_dir()
+test_dog_dir = log_directories.get_test_dog_dir()
