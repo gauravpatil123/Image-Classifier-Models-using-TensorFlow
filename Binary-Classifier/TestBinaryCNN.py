@@ -28,7 +28,7 @@ TEST_DOG_LIST = os.listdir(TEST_DOG_DIR)
 
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 message = "\nEvaluating model on test set"
-test_set_log = "\nTest set size = " + str(len(TEST_CAT_DIR) + len(TEST_DOG_LIST))
+test_set_log = "\nTest set size = " + str(len(TEST_CAT_LIST) + len(TEST_DOG_LIST))
 logging.info(message)
 logging.info(test_set_log)
 
