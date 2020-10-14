@@ -13,6 +13,10 @@ import DatasetDirectoryPreprocessing as DDP
 import MultiCNN as CNN
 from keras_preprocessing import image
 import random
+import logging
+
+# configuring logger
+logging.basicConfig(format="%(message)s", level=logging.INFO)
 
 # loading trained model
 Model = CNN.MultiCNN()
@@ -28,36 +32,48 @@ try:
 except:
     pass
 num_test_images = len(test_image_list)
-print("Number of Test Images: ", num_test_images)
+num_test_imgs_log = "Number of Test Images: " + str(num_test_images)
+logging.info(num_test_imgs_log)
 random.shuffle(test_image_list)
-print(test_image_list)
 
-TOTAL_TEST_IMAGES = 0
-accurate_images = 0
+def predict(verbose=False):
+    """
+    Predicts the classes on test set using the trained model
 
-# predictions
-for fn in test_image_list:
-    path = os.path.join(TEST_DIR, fn)
-    img = image.load_img(path, target_size = (300, 300))
+    Input:
+        verbose: boolean to print the result for each image
+    """
+    TOTAL_TEST_IMAGES = 0
+    accurate_images = 0
 
-    xs = image.img_to_array(img)
-    xs = np.expand_dims(xs, axis = 0)
+    # predictions
+    for fn in test_image_list:
+        path = os.path.join(TEST_DIR, fn)
+        img = image.load_img(path, target_size = (300, 300))
 
-    #images = np.vstack([xs])
-    classes = model.predict(xs)
-    print(classes)
+        xs = image.img_to_array(img)
+        xs = np.expand_dims(xs, axis = 0)
 
-    for idx in range(NUM_CLASSES):
-        if classes[0][idx] > 0.5:
-            key = "n" + str(idx)
-            print("\n" + fn + " is a " + CLASS_DICT.get(key))
-            TOTAL_TEST_IMAGES += 1
-            fn_label = fn[:2]
-            if key == fn_label:
-                accurate_images += 1
+        classes = model.predict(xs)
 
-print("Total tested images = ", TOTAL_TEST_IMAGES)
-accuracy = accurate_images / TOTAL_TEST_IMAGES
-accuracy = accuracy * 100
-print("Accuracy = " + str(accuracy) + "%")
+        for idx in range(NUM_CLASSES):
+            if classes[0][idx] > 0.5:
+                key = "n" + str(idx)
+                if verbose:
+                    class_name = str(CLASS_DICT.get(key))
+                    message = "\n" + fn + " is a " + class_name
+                    logging.info(message)
+                TOTAL_TEST_IMAGES += 1
+                fn_label = fn[:2]
+                if key == fn_label:
+                    accurate_images += 1
 
+    total_tested_img_log = "Total tested images = " + str(TOTAL_TEST_IMAGES)
+    logging.info(total_tested_img_log)
+    accuracy = accurate_images / TOTAL_TEST_IMAGES
+    accuracy = accuracy * 100
+    accuracy_log = "Accuracy = " + str(accuracy) + "%"
+    logging.info(accuracy_log)
+
+predict()
+# predict(verbose=True)

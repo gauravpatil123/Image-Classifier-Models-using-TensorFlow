@@ -69,7 +69,8 @@ I have undertaken this project to demonstrate my interpretation of Image Classif
       1. Training Set Size = 1098 (spread across all 10 classes)
       2. Validation Set Size = 272 (spread across all 10 classes)
     - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier/data/testing)
-      1. Testing Set Size = 80 (3 images of each class)
+      1. Testing Set Size = 80 (8 images of each class)
+      2. This testing dataset is self curated by downlaoding images from the web for all the classes. 
   - **Classes**
     - MultiCNN : model class for the convolutional neural network multi classifier
     - MultiImageGenerator : ImageDataGenerators for flowing the images to the model from dataset
@@ -94,6 +95,11 @@ I have undertaken this project to demonstrate my interpretation of Image Classif
     - <img src="Multi-Classifier/Images/train_v_validation_accuracy.png" width=1000>
     - Loss of Multi Classifier on Training and Validation set
     - <img src="Multi-Classifier/Images/train_v_validation_loss.png" width=1000>
+    - Results of the trained model on test set
+      - Accuracy of the Model on Test set = 60%
+      - <img src="Multi-Classifier/Images/test_results.png" width=1000>
+      - Verbose examples of test results
+      - <img src="Multi-Classifier/Images/test_verbose.png" height=500>
   
 3. **Multi-Classifier-with-Transfer-Learning:**
   - **Dataset**
@@ -122,4 +128,4 @@ I have undertaken this project to demonstrate my interpretation of Image Classif
 1. Training the Binary-Classifier just for 15 epochs on the dataset is enough for this model to reach a very high train accuracy >98% and high validataion accuracy ~80%. I have achieved these results by adding two convolutional layers in the model and then used a dropout layer to regularize the neural network and to apply pruning to the model to avoid the problems of overfitting. 
 I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning.
 2. The model classifies well on unseen cats and dogs images due to the application of the mentioned techiques. Hence the resulting F1 Score is high for the trained Classifier model (0.81 for classifying dog images, 0.738 for classifying cat images)
-3. 
+3. The Multi-Classifier model yeilds 60% accuracy on unseen test images eventhough the dataset used in Multi-Classifier model for training and validation is very small having only 1370 images spread over 10 classes. To yeild a better accuracy we need to simply increase the size of the dataset for training and validation to avoid quick overfitting on the dataset.
