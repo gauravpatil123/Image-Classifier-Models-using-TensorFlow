@@ -35,37 +35,45 @@ num_test_images = len(test_image_list)
 test_images_log = "Number of Test Images: " + str(num_test_images)
 logging.info(test_images_log) 
 random.shuffle(test_image_list)
-logging.info(str(test_image_list))
 
-TOTAL_TEST_IMAGES = 0
-accurate_images = 0
+def predict(verbose=False):
+    """
+    Predicts the classes on test set using the trained model
 
-for fn in test_image_list:
-    path = os.path.join(TEST_DIR, fn)
-    img = image.load_img(path, target_size = (300, 300))
+    Input:
+        verbose: boolean to print the result for each image
+    """
+    TOTAL_TEST_IMAGES = 0
+    accurate_images = 0
 
-    xs = image.img_to_array(img)
-    xs = np.expand_dims(xs, axis = 0)
+    # predictions
+    for fn in test_image_list:
+        path = os.path.join(TEST_DIR, fn)
+        img = image.load_img(path, target_size = (300, 300))
 
-    classes = model.predict(xs)
-    logging.info(str(classes))
+        xs = image.img_to_array(img)
+        xs = np.expand_dims(xs, axis = 0)
 
-    for idx in range(NUM_CLASSES):
-        if classes[0][idx] > 0.5:
-            key = "n" + str(idx)
-            message = "\n" + str(fn) + " is a " + str(CLASS_DICT.get(key))
-            logging.info(message)
-            TOTAL_TEST_IMAGES += 1
-            fn_label = fn[:2]
-            if key == fn_label:
-                accurate_images += 1
+        classes = model.predict(xs)
 
+        for idx in range(NUM_CLASSES):
+            if classes[0][idx] > 0.5:
+                key = "n" + str(idx)
+                if verbose:
+                    class_name = str(CLASS_DICT.get(key))
+                    message = "\n" + fn + " is a " + class_name
+                    logging.info(message)
+                TOTAL_TEST_IMAGES += 1
+                fn_label = fn[:2]
+                if key == fn_label:
+                    accurate_images += 1
 
-test_images_log = "Total tested images = " + str(TOTAL_TEST_IMAGES)
-logging.info(test_images_log)
-accuracy = accurate_images / TOTAL_TEST_IMAGES
-accuracy = accuracy * 100
-acc_log = "Accuracy = " + str(accuracy) + "%"
-logging.info(acc_log)
+    total_tested_img_log = "Total tested images = " + str(TOTAL_TEST_IMAGES)
+    logging.info(total_tested_img_log)
+    accuracy = accurate_images / TOTAL_TEST_IMAGES
+    accuracy = accuracy * 100
+    accuracy_log = "Accuracy = " + str(accuracy) + "%"
+    logging.info(accuracy_log)
 
-
+predict()
+# predict(verbose=True)
