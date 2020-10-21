@@ -3,8 +3,8 @@ Image classification models on various datasets using TensorFlow and Keras
 
 **Contents**
 - About
-- Models
 - Conclusions
+- Models
   1. Binary-Classifier
     - Dataset
     - Classes
