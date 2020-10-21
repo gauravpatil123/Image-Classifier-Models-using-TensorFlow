@@ -14,11 +14,6 @@ Image classification models on various datasets using TensorFlow and Keras
     - Classes
     - Executables
     - Results
-  3. Multi-Classifier-with-Transfer-Learning
-    - Dataset
-    - Classes
-    - Executables
-    - Results
 - Conclusions
 
 **About**</br>
@@ -101,29 +96,6 @@ I have undertaken this project to demonstrate my interpretation of Image Classif
       - Verbose examples of test results
       - <img src="Multi-Classifier/Images/test_verbose.png" height=500>
   
-3. **Multi-Classifier-with-Transfer-Learning:**
-  - **Dataset**
-    - [Monkey-Species](https://www.kaggle.com/slothkong/10-monkey-species?)
-      1. Training Set Size = 1098 (spread across all 10 classes)
-      2. Validation Set Size = 272 (spread across all 10 classes)
-    - [Testing Dataset](https://github.com/gauravpatil123/Image-Classifier-Models-using-TensorFlow/tree/working/Multi-Classifier-with-Transfer-Learning/data/testing)
-      1. Testing Set Size = 30 (3 images of each class)
-
-  - **Classes**
-    - PreTrainedInceptionV3 : importing and loading the pre-trained weights from the InceptionV3 model from keras.applications and configuring the model
-    - MultiCNN : configuring a model by adding Dense and output layers at the bootom of the pre-trained model
-    - ImageGenerators : ImageDataGenerators for flowing theimages to the model from dataset
-    - DatasetDirectoryPreprocessing : Directories, processing and splitting of dataset in to training, validation and test sets
-    - PlotCode : Plotting metrics from the trained model
-  - **Executables**
-    - TrainMultiCNN : Training the neural network using data generators from ImageGenerators on the Monkey-Species dataset
-    - TestMultiCNN : Testing the MultiCNN model on the Testing Dataset
-  - **Results**
-    - Accuracy of the classifier on Training and Validation set
-    - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_accuracy.png" width=1000>
-    - Loss of the classifier on Training and Validation set
-    - <img src="Multi-Classifier-using-Transfer-Learning/Images/train_v_validation_loss.png" width=1000>
-
 **Conclusions**
 1. Training the Binary-Classifier just for 15 epochs on the dataset is enough for this model to reach a very high train accuracy >98% and high validataion accuracy ~80%. I have achieved these results by adding two convolutional layers in the model and then used a dropout layer to regularize the neural network and to apply pruning to the model to avoid the problems of overfitting. 
 I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning.
