@@ -17,12 +17,12 @@ Image classification models on various datasets using TensorFlow and Keras
     - Results
 
 **About**</br>
-I have undertaken this project to demonstrate my interpretation of Image Classifiers. I have built three Image classifiers (Binary-Classifier, Multi-Classifier and Multi-Classifier-with-Transfer-Learning) and trained them on opensource datasets from kaggel dot com. I have used TensorFlow 2.0 to build these classifiers. The build design is object oriented containing several classes. The executable code to train and test the models is written as a script.
+I did this project to demonstrate my interpretation of Image Classifiers. I have built two Image classifiers (Binary-Classifier and Multi-Classifier) and trained them on opensource datasets from kaggel dot com. I have used TensorFlow 2.0 to build these classifiers. The build design is object oriented containing several classes. The executable code to train and test the models is written as a script.
 
 **Conclusions**
 1. The Binary classifier model has achieved high learning rate and accuracy owing to the better feature extraction from the two consecuting convolutional-maxpool layer blocks. Additionally the use of dropout layer prunes the neural network of access redundant features and avoids the problem of overfitting, dropout layer also solves the problem of exploding and vanishing gradients. I have also appied data augmentation techniques to generate synthetic data to add variety to the training dataset and improve the learning. Training this Binary-Classifier just for 15 epochs on the dataset is enough for the model to reach a very high train accuracy >98% and high validataion accuracy ~80%.
 2. The Binary model classifies well on unseen cats and dogs images due to the application of the methods mentioned in conclusion point 1. Hence the resulting F1 Score is high for the trained Classifier model (0.81 for classifying dog images, 0.738 for classifying cat images)
-3. Eventhough the dataset used in Multi-Classifier model for training and validation is very small having only 1370 images spread over 10 classes the Multi-Classifier model yeilds 60% accuracy on unseen test images. To yeild a better accuracy we need to increase the size of the dataset for training and validation to avoid quick overfitting on the dataset.
+3. Eventhough the dataset used in Multi-Classifier model for training and validation is very small having only 1370 images spread over 10 classes the Multi-Classifier model yields 60% accuracy on unseen test images. To yeild a better accuracy we need to increase the size of the dataset for training and validation to avoid quick overfitting on the dataset.
 
 **Models**
 1. **Binary-Classifier:**
